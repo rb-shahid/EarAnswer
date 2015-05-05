@@ -1,6 +1,5 @@
 package byteshaft.com.autoanswer;
 
-
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 

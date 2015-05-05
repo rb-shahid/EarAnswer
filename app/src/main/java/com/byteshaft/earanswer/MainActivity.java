@@ -1,12 +1,13 @@
 package com.byteshaft.earanswer;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-public class MainActivity extends ActionBarActivity implements CheckBox.OnCheckedChangeListener {
+public class MainActivity extends Activity implements CheckBox.OnCheckedChangeListener, View.OnClickListener {
 
     private Helpers mHelpers;
     private CheckBox mCheckBox;
@@ -18,6 +19,7 @@ public class MainActivity extends ActionBarActivity implements CheckBox.OnChecke
         mCheckBox = (CheckBox) findViewById(R.id.auto_answer_checkbox);
         mCheckBox.setOnCheckedChangeListener(this);
         mHelpers = new Helpers(getApplicationContext());
+        setFinishOnTouchOutside(false);
     }
 
     @Override
@@ -36,6 +38,14 @@ public class MainActivity extends ActionBarActivity implements CheckBox.OnChecke
                     stopService(new Intent(this, SensorService.class));
                 }
                 mHelpers.enableCallAutoAnswer(isChecked);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bClose:
+                finish();
         }
     }
 }

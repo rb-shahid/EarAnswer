@@ -1,4 +1,4 @@
-package byteshaft.com.autoanswer;
+package com.byteshaft.earanswer;
 
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;

@@ -1,4 +1,4 @@
-package byteshaft.com.autoanswer;
+package com.byteshaft.earanswer;
 
 import android.app.Service;
 import android.content.Intent;
